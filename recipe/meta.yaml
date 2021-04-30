@@ -1,5 +1,5 @@
 {% set name = "safeint" %}
-{% set version = "3.0.26" %}
+{% set version = "3.24" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/dcleblanc/SafeInt/archive/refs/tags/{{ version }}.tar.gz
-  sha256: 62fef99873ad975ddd8356923b3d51ed316209c1a05ac85814219373a13ae4d5
+  sha256: af6c7222a8420f6f87e198dc94791c28da75fe7241b605342c333fd03fd9dea6
 
 build:
   number: 0
@@ -26,7 +26,7 @@ test:
     - test -f $PREFIX/include/SafeInt.hpp
 
 about:
-  home: https://github.com/dcleblanc/SafeInt 
+  home: https://github.com/dcleblanc/SafeInt
   summary: SafeInt is a class library for C++ that manages integer overflows.
   license: MIT
   license_file: LICENSE
