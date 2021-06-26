@@ -11,8 +11,7 @@ source:
   sha256: 62fef99873ad975ddd8356923b3d51ed316209c1a05ac85814219373a13ae4d5
 
 build:
-  number: 0
-  skip: true  # [win]
+  number: 1
 
 requirements:
   build:
@@ -23,7 +22,8 @@ requirements:
 
 test:
   commands:
-    - test -f $PREFIX/include/SafeInt.hpp
+    - test -f $PREFIX/include/SafeInt.hpp  # [unix]
+    - if not exist %LIBRARY_PREFIX%\\include\\SafeInt.hpp exit 1  # [win]
 
 about:
   home: https://github.com/dcleblanc/SafeInt 
