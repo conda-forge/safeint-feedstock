@@ -2,7 +2,8 @@
 
 REM cmake install targets removed
 REM https://github.com/dcleblanc/SafeInt/issues/67
-mkdir %LIBRARY_PREFIX%\include
+REM Only make the directory if it doesn't exist
+if not exist %LIBRARY_PREFIX%\include\ mkdir %LIBRARY_PREFIX%\include\.
 if errorlevel 1 exit 1
 
 REM As of July, 2022, there is also a C library [...]
