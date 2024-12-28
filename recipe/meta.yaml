@@ -16,16 +16,18 @@ requirements:
     - {{ stdlib('c') }}
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - cmake
-    - ninja
 
 test:
   commands:
-    - test -f $PREFIX/include/SafeInt.hpp  # [unix]
-    - if not exist %LIBRARY_PREFIX%\\include\\SafeInt.hpp exit 1  # [win]
+    - test -f $PREFIX/include/SafeInt.hpp       # [unix]
+    - test -f $PREFIX/include/safe_math.h       # [unix]
+    - test -f $PREFIX/include/safe_math_impl.h  # [unix]
+    - if not exist %LIBRARY_PREFIX%\\include\\SafeInt.hpp exit 1       # [win]
+    - if not exist %LIBRARY_PREFIX%\\include\\safe_math.h exit 1       # [win]
+    - if not exist %LIBRARY_PREFIX%\\include\\safe_math_impl.h exit 1  # [win]
 
 about:
-  home: https://github.com/dcleblanc/SafeInt 
+  home: https://github.com/dcleblanc/SafeInt
   summary: SafeInt is a class library for C++ that manages integer overflows.
   license: MIT
   license_file: LICENSE
